@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+.container {  
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr;
+  grid-template-rows: 0.3fr 1.6fr 1.4fr 1.2fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "nav nav"
+    "video-container video-container"
+    "color-control-container oled-text-control-container"
+    "oled-extra-commands oled-extra-commands";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav { grid-area: nav; }
+
+.video-container {  display: grid;
+  grid-template-columns: 0.6fr 1.8fr 0.6fr;
+  grid-template-rows: 1.7fr 0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". video ."
+    ". video-description .";
+  grid-area: video-container;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.video { grid-area: video; }
+
+.video-description { grid-area: video-description; }
+
+.color-control-container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.7fr 1.7fr 0.6fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "color-control-header color-control-header color-control-header"
+    "color-control color-control color-control"
+    "color-control-button-container color-control-button-container color-control-button-container";
+  grid-area: color-control-container;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.color-control-header { grid-area: color-control-header; }
+
+.color-control-button-container { grid-area: color-control-button-container; }
+
+.color-control { grid-area: color-control; }
+
+.oled-text-control-container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.7fr 1.7fr 0.6fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "oled-text-control-header oled-text-control-header oled-text-control-header"
+    "oled-text-area oled-text-area oled-text-area"
+    "oled-text-button-container oled-text-button-container oled-text-button-container";
+  grid-area: oled-text-control-container;
 }
 
-.App-link {
-  color: #61dafb;
+.oled-text-control-header { grid-area: oled-text-control-header; }
+
+.oled-text-area { grid-area: oled-text-area; }
+
+.oled-text-button-container { grid-area: oled-text-button-container; }
+
+.oled-extra-commands {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "oled-extra-commands-header oled-extra-commands-header"
+    "oled-extra-command-button-1 oled-extra-command-button-5"
+    "oled-extra-command-button-2 oled-extra-command-button-6"
+    "oled-extra-command-button-3 oled-extra-command-button-7"
+    "oled-extra-command-button-4 oled-extra-command-button-8";
+  grid-area: oled-extra-commands;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.oled-extra-commands-header { grid-area: oled-extra-commands-header; }
+
+.oled-extra-command-button-1 { grid-area: oled-extra-command-button-1; }
+
+.oled-extra-command-button-2 { grid-area: oled-extra-command-button-2; }
+
+.oled-extra-command-button-3 { grid-area: oled-extra-command-button-3; }
+
+.oled-extra-command-button-4 { grid-area: oled-extra-command-button-4; }
+
+.oled-extra-command-button-5 { grid-area: oled-extra-command-button-5; }
+
+.oled-extra-command-button-6 { grid-area: oled-extra-command-button-6; }
+
+.oled-extra-command-button-7 { grid-area: oled-extra-command-button-7; }
+
+.oled-extra-command-button-8 { grid-area: oled-extra-command-button-8; }
+
+div {border: 1px solid cornflowerblue;}
