@@ -18,6 +18,31 @@ function App() {
     if (status === 503) displayBusyDeviceMessage()
   }
 
+  const handleSnow = async () => {
+    const status = await apiService.tvSnow()
+    if (status === 503) displayBusyDeviceMessage()
+  }
+
+  const handleStarWars = async () => {
+    const status = await apiService.starWars()
+    if (status === 503) displayBusyDeviceMessage()
+  }
+
+  const handleMatrix = async () => {
+    const status = await apiService.matrix()
+    if (status === 503) displayBusyDeviceMessage()
+  }
+
+  const handleRunner = async () => {
+    const status = await apiService.runner()
+    if (status === 503) displayBusyDeviceMessage()
+  }
+
+  const handleStars = async () => {
+    const status = await apiService.starField()
+    if (status === 503) displayBusyDeviceMessage()
+  }
+
   const displayBusyDeviceMessage = () => {
     setErrorMessage('Device is busy, please wait.')
     setTimeout(() => {
@@ -60,12 +85,22 @@ function App() {
     </div>
     <div className="oled-extra-commands">
       <div className="oled-extra-commands-header">Other OLED Commands</div>
-      <div className="oled-extra-command-button-1"><button>Send Command</button></div>
-      <div className="oled-extra-command-button-2"><button>Send Command</button></div>
-      <div className="oled-extra-command-button-3"><button>Send Command</button></div>
+      <div className="oled-extra-command-button-1">
+        <button  onClick={() => handleSnow()}>Activate Snow</button>
+      </div>
+      <div className="oled-extra-command-button-2">
+        <button onClick={() => handleStarWars()}>Star Wars</button>
+      </div>
+      <div className="oled-extra-command-button-3">
+        <button onClick={() => handleStars()}>Into the Stars</button>
+      </div>
       <div className="oled-extra-command-button-4"><button>Send Command</button></div>
-      <div className="oled-extra-command-button-5"><button>Send Command</button></div>
-      <div className="oled-extra-command-button-6"><button>Send Command</button></div>
+      <div className="oled-extra-command-button-5">
+        <button onClick={() => handleMatrix()}>Enter the Matrix</button>
+      </div>
+      <div className="oled-extra-command-button-6">
+        <button onClick={() => handleRunner()}>Run!!!</button>
+      </div>
       <div className="oled-extra-command-button-7"><button>Send Command</button></div>
       <div className="oled-extra-command-button-8"><button>Send Command</button></div>
     </div>
