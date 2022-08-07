@@ -14,7 +14,8 @@ function App() {
   }
 
   const handleSendOLEDMessage = async () => {
-    await apiService.sendOLEDMessage({'message': message})
+    const status = await apiService.sendOLEDMessage({'message': message})
+    if (status === 503) displayBusyDeviceMessage()
   }
 
   const displayBusyDeviceMessage = () => {
