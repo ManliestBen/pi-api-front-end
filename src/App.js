@@ -52,6 +52,7 @@ function App() {
       <div className="oled-text-area">
         <textarea value={message} onChange={handleChangeMessage} name="message" cols="25" rows="5"></textarea>
         <p>{message.length}/100</p>
+        <button onClick={() => setMessage('')}>Clear</button>
       </div>
       <div className="oled-text-button-container">
         <button onClick={() => handleSendOLEDMessage()} disabled={!(message.length <= 100)}>Send Message</button>
