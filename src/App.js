@@ -43,6 +43,11 @@ function App() {
     if (status === 503) displayBusyDeviceMessage()
   }
 
+  const handleInvaders = async () => {
+    const status = await apiService.invaders()
+    if (status === 503) displayBusyDeviceMessage()
+  }
+
   const displayBusyDeviceMessage = () => {
     setErrorMessage('Device is busy, please wait.')
     setTimeout(() => {
@@ -94,15 +99,17 @@ function App() {
       <div className="oled-extra-command-button-3">
         <button onClick={() => handleStars()}>Into the Stars</button>
       </div>
-      <div className="oled-extra-command-button-4"><button>Send Command</button></div>
+      {/* <div className="oled-extra-command-button-4"><button>Send Command</button></div> */}
       <div className="oled-extra-command-button-5">
         <button onClick={() => handleMatrix()}>Enter the Matrix</button>
       </div>
       <div className="oled-extra-command-button-6">
         <button onClick={() => handleRunner()}>Run!!!</button>
       </div>
-      <div className="oled-extra-command-button-7"><button>Send Command</button></div>
-      <div className="oled-extra-command-button-8"><button>Send Command</button></div>
+      <div className="oled-extra-command-button-7">
+        <button onClick={() => handleInvaders()}>Space Invaders</button>
+      </div>
+      {/* <div className="oled-extra-command-button-8"><button>Send Command</button></div> */}
     </div>
   </div>
   );
